@@ -3,7 +3,7 @@
 
 .testimonial-section {
   padding: 80px 20px;
-  background-color: #f9f9f9;
+  background: url(../../assets/img/black-background.webp);
   overflow: hidden;
   max-width: 1440px;
 }

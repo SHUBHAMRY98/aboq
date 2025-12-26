@@ -1,6 +1,6 @@
 
-import Nav from '../nav/Nav'
-import Footer from '../footer/Footer'
+import  './About.css'
+
 
 
 function About() {
@@ -10,11 +10,11 @@ function About() {
   return (
     
     <>
-    <Nav/>
+   
 
 <h1>About</h1>
 
-    <Footer/>
+  
     </>
     
   );

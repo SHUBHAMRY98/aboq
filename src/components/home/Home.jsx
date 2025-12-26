@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState, useMemo } from "react";
 
-import Nav from '../nav/Nav';
-import Footer from "../footer/Footer";
+
 
 import './Home.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -54,13 +53,6 @@ function Home() {
   const typedInstance = useRef(null); // Typed instance ko store karne ke liye
   const [init, setInit] = useState(false);
 
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
-  }, []);
 
   // Fixed Typing Logic
   useEffect(() => {
@@ -88,16 +80,48 @@ function Home() {
     };
   }, []);
 
+
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  
   const particlesOptions = useMemo(() => ({
     fullScreen: { enable: false },
     background: { color: { value: "transparent" } },
     fpsLimit: 120,
+    interactivity: {
+    events: {
+//       onClick: {
+//   enable: true,
+//   mode: "push",
+// },
+// modes: {
+//   push: { quantity: 4 },
+// },
+      onHover: {
+        enable: true,
+        mode: "repulse",   
+      },
+      resize: true,
+    },
+    modes: {
+      repulse: {
+        distance: 100,    
+        duration: 0.4,  
+      },
+    },
+  },
     particles: {
-      color: { value: "#ffffff" },
+      color: { value: "#E9641B" },
       links: { color: "#ffffff", distance: 150, enable: true, opacity: 0.2, width: 1 },
       move: { enable: true, speed: 1.5 },
       number: { value: 80 },
-      opacity: { value: 0.4 },
+      opacity: { value: 0.9 },
       size: { value: { min: 1, max: 3 } },
     },
   }), []);
@@ -239,7 +263,7 @@ function Home() {
 
   return (
     <>
-    <Nav/>
+  
     
    
     <div className="home-wrapper">
@@ -793,7 +817,7 @@ function Home() {
 <Review/>
     </div>
 
-    <Footer/>
+
  </>
     
   );
