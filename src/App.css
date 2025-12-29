@@ -2,6 +2,11 @@
   max-width: 1440px;
   margin: 0 auto;
   text-align: center;
+   --font-primary: 'Plus Jakarta Sans', sans-serif;
+}
+
+*, body{
+   font-family: var(--font-primary);
 }
 
 .logo {

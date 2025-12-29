@@ -1,11 +1,23 @@
 import { useEffect, useRef, useState, useMemo } from "react";
-
+import { Link } from "react-router-dom";
 
 
 import './Home.css';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation, Pagination, EffectFade } from 'swiper/modules';
 import { Smartphone, Monitor, ShoppingCart, BarChart3, Globe } from 'lucide-react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faGlobe,
+  faPalette,
+  faPenNib,
+  faMagnifyingGlassChart,
+  faShareNodes,
+  faBullhorn
+} from '@fortawesome/free-solid-svg-icons';
+
 import Typed from 'typed.js';
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -22,13 +34,7 @@ import Icon4 from '../../assets/img/support.png'
 
 import AboutImg from '../../assets/img/1.webp'; 
 import RevampImg from '../../assets/img/revamp.png';
-import DigitalMar from '../../assets/img/digital-marketing.png';
-import WebDesign from '../../assets/img/web-design.jpg'
-import WebDevlopment from '../../assets/img/web-development.png'
-import Graphics from '../../assets/img/graphic-design.png'
-import GoogleADS from '../../assets/img/google-ads.png'
-import SEO from '../../assets/img/seo.png'
-import SMM from '../../assets/img/smm.png'
+
 
 import Workshop from '../../assets/img/workshop-removebg-preview.png'
 import Planning from '../../assets/img/planning-removebg-preview.png'
@@ -49,36 +55,95 @@ import 'swiper/css/effect-fade';
 import { motion } from 'framer-motion';
 
 function Home() {
+
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+        threshold: 0.2
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+                observer.unobserve(entry.target); // Run only once
+            }
+        });
+    }, observerOptions);
+
+    const cards = document.querySelectorAll('.service-item');
+    cards.forEach(card => {
+        card.style.opacity = '0'; // Initial state
+        card.style.animationPlayState = 'paused';
+        observer.observe(card);
+    });
+});
+
+
   const typedElement = useRef(null);
   const typedInstance = useRef(null); // Typed instance ko store karne ke liye
   const [init, setInit] = useState(false);
 
 
   // Fixed Typing Logic
-  useEffect(() => {
-    // Purane instance ko destroy karein agar koi hai
+
+  // Inside your Home component
+useEffect(() => {
+  // 1. Create options
+  const options = {
+    strings: [
+      "Website Development",
+      "Graphics Designing", 
+      "Website Designing", 
+      "Search Engine Optimization",
+      "Google Ads",
+      "Social Media Marketing"
+    ],
+    typeSpeed: 100,
+    backSpeed: 80,
+    loop: true,
+    backDelay: 1500,
+    showCursor: true,
+    cursorChar: '|'
+  };
+
+  // 2. Initialize only if the element exists
+  if (typedElement.current) {
+    typedInstance.current = new Typed(typedElement.current, options);
+  }
+
+  // 3. Cleanup: This is crucial to prevent memory leaks and "double typing"
+  return () => {
     if (typedInstance.current) {
       typedInstance.current.destroy();
     }
+  };
+}, []); // Empty dependency array ensures this runs once
 
-    if (typedElement.current) {
-      typedInstance.current = new Typed(typedElement.current, {
-        strings: ["We are a leading web design", "Company providing creative solutions"],
-        typeSpeed: 60,
-        backSpeed: 40,
-        loop: true,
-        backDelay: 1500,
-        showCursor: true,
-        cursorChar: '|'
-      });
-    }
+  // useEffect(() => {
+  //   // Purane instance ko destroy karein agar koi hai
+  //   if (typedInstance.current) {
+  //     typedInstance.current.destroy();
+  //   }
 
-    return () => {
-      if (typedInstance.current) {
-        typedInstance.current.destroy();
-      }
-    };
-  }, []);
+  //   if (typedElement.current) {
+  //     typedInstance.current = new Typed(typedElement.current, {
+  //       strings: ["Website Development","Graphics Designing", "Website Designing", "Search Engine Optimization","Google Ads","Social Media Marketing"],
+  //       typeSpeed: 100,
+  //       backSpeed: 80,
+  //       loop: true,
+  //       backDelay: 1500,
+  //       showCursor: true,
+  //       cursorChar: '|'
+  //     });
+  //   }
+
+  //   return () => {
+  //     if (typedInstance.current) {
+  //       typedInstance.current.destroy();
+  //     }
+  //   };
+  // }, []);
 
 
   useEffect(() => {
@@ -124,6 +189,21 @@ function Home() {
       opacity: { value: 0.9 },
       size: { value: { min: 1, max: 3 } },
     },
+
+     // ✅ RESPONSIVE BREAKPOINT
+  responsive: [
+    {
+      maxWidth: 1024, // 📱 small screen
+      options: {
+        particles: {
+          number: {
+            value: 30, // 👈 mobile particles
+          },
+        },
+      },
+    },
+  ],
+
   }), []);
 
   const services = [
@@ -192,20 +272,20 @@ function Home() {
   // Work
 
  
-    const industries = [
-      { title: "Social Networking", icon:Icon1},
-      { title: "Digital Marketing", icon:Icon1},
-      { title: "Ecommerce Development", icon:Icon1},
-      { title: "Video Service", icon:Icon1},
-      { title: "Banking Service", icon:Icon1},
-      { title: "Enterprise Service", icon:Icon1},
-      { title: "Education Service", icon:Icon1},
-      { title: "Tour and Travels", icon:Icon1},
-      { title: "Health Service", icon:Icon1},
-      { title: "Event & Ticket", icon:Icon1},
-      { title: "Restaurant Service", icon:Icon1},
-      { title: "Business Consultant", icon:Icon1},
-    ];
+    // const industries = [
+    //   { title: "Social Networking", icon:Icon1},
+    //   { title: "Digital Marketing", icon:Icon1},
+    //   { title: "Ecommerce Development", icon:Icon1},
+    //   { title: "Video Service", icon:Icon1},
+    //   { title: "Banking Service", icon:Icon1},
+    //   { title: "Enterprise Service", icon:Icon1},
+    //   { title: "Education Service", icon:Icon1},
+    //   { title: "Tour and Travels", icon:Icon1},
+    //   { title: "Health Service", icon:Icon1},
+    //   { title: "Event & Ticket", icon:Icon1},
+    //   { title: "Restaurant Service", icon:Icon1},
+    //   { title: "Business Consultant", icon:Icon1},
+    // ];
 
 
 
@@ -213,52 +293,114 @@ function Home() {
     //Process 
 
 
-  const [activeStep, setActiveStep] = useState(0);
+  // const [activeStep, setActiveStep] = useState(0);
 
-  const steps = [
-    {
-      id: "step01",
-      title: "Discovery Workshop",
-      img: Workshop,
-      content: "We give the utmost importance to understand and document client’s inputs, design, and branding preferences. We work in a collaborative approach involving key stakeholders."
-    },
-    {
-      id: "step02",
-      title: "Planning",
-      img: Planning,
-      content: "Our services emphasize on well-defined project planning and leave nothing for assumption. We define technical specifications and devise branding guidelines."
-    },
-    {
-      id: "step03",
-      title: "Design",
-      img: Designing,
-      content: "We provide Web, Tablet, and Mobile-specific UI designs. We deliver clickable prototypes on Invision platform and source files in Photoshop or Sketch."
-    },
-    {
-      id: "step04",
-      title: "Development",
-      img: Development,
-      content: "We cater requirements for frontend, backend, and API integration using Agile Scrum methodology, focusing on scalability and clean code structure."
-    },
-    {
-      id: "step05",
-      title: "Testing",
-      img: Testing,
-      content: "We test each sprint manually, report bugs, and perform regression testing to ensure proper functioning of previously approved milestones."
-    },
-    {
-      id: "step06",
-      title: "Maintenance",
-      img: Maintenance,
-      content: "We ensure product enhancement through regular Security Audits, code backups, and constant system upgradation even after development ends."
-    }
-  ];
+  // const stepss = [
+  //   {
+  //     id: "step01",
+  //     title: "Discovery Workshop",
+  //     img: Workshop,
+  //     content: "We give the utmost importance to understand and document client’s inputs, design, and branding preferences. We work in a collaborative approach involving key stakeholders."
+  //   },
+  //   {
+  //     id: "step02",
+  //     title: "Planning",
+  //     img: Planning,
+  //     content: "Our services emphasize on well-defined project planning and leave nothing for assumption. We define technical specifications and devise branding guidelines."
+  //   },
+  //   {
+  //     id: "step03",
+  //     title: "Design",
+  //     img: Designing,
+  //     content: "We provide Web, Tablet, and Mobile-specific UI designs. We deliver clickable prototypes on Invision platform and source files in Photoshop or Sketch."
+  //   },
+  //   {
+  //     id: "step04",
+  //     title: "Development",
+  //     img: Development,
+  //     content: "We cater requirements for frontend, backend, and API integration using Agile Scrum methodology, focusing on scalability and clean code structure."
+  //   },
+  //   {
+  //     id: "step05",
+  //     title: "Testing",
+  //     img: Testing,
+  //     content: "We test each sprint manually, report bugs, and perform regression testing to ensure proper functioning of previously approved milestones."
+  //   },
+  //   {
+  //     id: "step06",
+  //     title: "Maintenance",
+  //     img: Maintenance,
+  //     content: "We ensure product enhancement through regular Security Audits, code backups, and constant system upgradation even after development ends."
+  //   }
+  // ];
 
   // Progress Bar width logic
-  const progressWidth = (activeStep / (steps.length - 1)) * 100;
+  // const progressWidth = (activeStep / (stepss.length - 1)) * 100;
 
 
 
+
+
+  const steps = [
+  {
+    id: "01",
+    title: "Research",
+    description: "We carefully understand and document your business goals, target audience, design preferences, and branding requirements. ",
+    icon: Workshop
+  },
+  {
+    id: "02",
+    title: "Planning",
+    description: "Our experts craft a tailored digital strategy that aligns with your goals, audience, and brand identity.",
+    icon: Planning
+  },
+  {
+    id: "03",
+    title: "Design",
+    description: "With data-driven execution, we turn your challenges into measurable success — more traffic, leads, and conversions.",
+    icon: Designing
+  },
+
+  {
+    id: "04",
+    title: "Development",
+    description: "We carefully understand and document your business goals, target audience, design preferences, and branding requirements. ",
+    icon: Development
+  },
+  {
+    id: "05",
+    title: "Testing",
+    description: "Our experts craft a tailored digital strategy that aligns with your goals, audience, and brand identity.",
+    icon: Testing
+  },
+  {
+    id: "06",
+    title: "Maintenance",
+    description: "With data-driven execution, we turn your challenges into measurable success — more traffic, leads, and conversions.",
+    icon: Maintenance
+  }
+];
+
+
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const animatedElements = sectionRef.current.querySelectorAll('.reveal');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
 
 
   return (
@@ -270,7 +412,7 @@ function Home() {
       <section className="hero-section">
         {init && <Particles id="tsparticles" options={particlesOptions} />}
 
-        <Swiper
+        {/* <Swiper
           modules={[Navigation, Pagination, EffectFade, Autoplay]}
           effect="fade"
           loop={true}
@@ -278,34 +420,23 @@ function Home() {
           pagination={{ clickable: true }}
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           className="hero-swiper"
-        >
-          <SwiperSlide
+        > */}
+          <div
             className="hero-slide"
             style={{ backgroundImage: `url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070')` }}
           >
             <div className="hero-overlay"></div>
             <div className="hero-content">
-              <h1 className="typed-container">
+             <h2>Your Growth Starts With</h2> <h1 className="typed-container">
                 {/* Yahan span ko static rakha hai loop mode ke liye */}
-                <span ref={typedElement}></span>
+               <span ref={typedElement}></span>
               </h1>
               <p>With over 10 years experience in IT industry, We are pioneers in the field of Website Designing & Development.</p>
-              <button className="default-btn">Contact Now</button>
+              <Link to="/contact"> <button className="default-btn">Contact Now</button></Link>
             </div>
-          </SwiperSlide>
+          </div>
 
-          <SwiperSlide
-            className="hero-slide"
-            style={{ backgroundImage: `url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015')` }}
-          >
-            <div className="hero-overlay"></div>
-            <div className="hero-content">
-              <h1>SEO Services We Provide <br /> For Your Company</h1>
-              <p>From a landing page to a complex multipage website, we offer what you are looking for.</p>
-              <button className="default-btn">Contact Now</button>
-            </div>
-          </SwiperSlide>
-        </Swiper>
+        {/* </Swiper> */}
       </section>
 
       {/* Bottom Service Slider */}
@@ -389,7 +520,7 @@ function Home() {
               </div>
 
               <div className="btn-wrapper">
-                <a href="/about" className="read-more-btn">Read More</a>
+                <Link to="/about" className="read-more-btn">Read More</Link>
               </div>
             </motion.div>
 
@@ -433,7 +564,18 @@ function Home() {
             viewport={{ once: false, amount: 0.3 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
           >
-            <div className="revamp-text-wrapper">
+
+              <div className="hiw-header  fadeInUp">
+          <span className="hiw-subtitle">Reimagine, Redesign, Revamp</span>
+          <h2 className="hiw-main-title">
+            powerful digital experience by <span>revamp</span> performance
+          </h2>
+          <p className="hiw-description">
+            We transform your website into a modern, high-performing digital experience. Elevating your digital presence with thoughtful design and powerful functionality !
+          </p>
+        </div>
+
+            {/* <div className="revamp-text-wrapper">
               <h1 className="revamp-title">Reimagine, Redesign, Revamp</h1>
               <p className="revamp-description">
                 We transform your website into a modern, high-performing digital experience. Elevating your digital presence with thoughtful design and powerful functionality !
@@ -441,7 +583,8 @@ function Home() {
               <div className="revamp-btn-container">
                 <a href="/contact" className="revamp-quote-btn">Get a quote</a>
               </div>
-            </div>
+            </div> */}
+
           </motion.div>
 
         </div>
@@ -449,303 +592,187 @@ function Home() {
 
 
 
-      <section className="choice-section">
-        <div className="choice-wrapper">
-
-          {/* Left Content Side */}
-          <motion.div
-            className="choice-content-side"
-            initial={{ opacity: 0, x: -80 }}
+<section className="how-it-works-section" ref={sectionRef}>
+      <div className="hiw-container">
+        {/* Header Section */}
+        <motion.div className="hiw-header fadeInUp"
+        initial={{ opacity: 0, x: -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-          >
-            <div className="choice-text-container">
-              <h1 className="choice-title">Best Website Design Company</h1>
-              <p className="choice-description">
-                ABOQ India is the Right Choice for all types of Websites. If you are planning
-                to start up your Company, or just a recently start up Company, or running your
-                own store or shop for selling products, then ABOQ India is the perfect choice
-                to turn your dreams into reality.
-              </p>
+            transition={{ duration:2, ease: "easeOut" }}
+        >
+          <span className="hiw-subtitle">WHAT WE DO</span>
+          <h2 className="hiw-main-title">
+            Our complete <span>Digital Services</span> for your growth
+          </h2>
+          <p className="hiw-description">
+            We deliver end-to-end digital solutions that help brands grow online. From creative web design and robust development to result-driven SEO, social media marketing, graphic design, and Google Ads, we craft strategies that build visibility, engagement, and conversions
+          </p>
+        </motion.div>
 
-              <div className="choice-btn-group">
-                <a href="/about" className="btn-solid">Read More</a>
-                <a href="/contact" className="btn-outline">Get a Quote</a>
-              </div>
-            </div>
-          </motion.div>
+        {/* Steps Grid */}
+        <div className="hiw-grid">
 
-          {/* Right Image Side */}
-          <motion.div
-            className="choice-image-side"
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="choice-img-box">
-              <img src={WebDesign} alt="Best Website Design" className="img-fluid" />
-            </div>
-          </motion.div>
 
+  <Link to=""> 
+   <div class="service-item animated-card">
+
+    <div class="service-header">
+        <div class="service-icon">
+            <FontAwesomeIcon icon={faGlobe} />
         </div>
-      </section>
+        
+        <a href="#" class="service-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="currentColor">
+                <path d="M23.6144 13.8266L11.4211 26.0199L9.41797 24.0167L21.6098 11.8234H10.8644V8.99011H26.4477V24.5734H23.6144V13.8266Z"></path>
+            </svg>
+        </a>
+    </div>
 
+    <div class="service-body">
+        <a href="#" class="service-content-link">
+            <h3 class="service-title">Web Development</h3>
+            <p class="service-description">
+                We build fast, secure, and scalable websites, that turn ideas into powerful digital experiences.
+            </p>
+        </a>
+    </div>
+</div>
+</Link>
 
-      <section className="revamp-section">
-        <div className="revamp-wrapper">
-
-          {/* Left Side: Image */}
-          <motion.div
-            className="revamp-image-side"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <div className="revamp-img-container">
-              <img src={WebDevlopment} alt="Revamp your site" className="img-responsive" />
-            </div>
-          </motion.div>
-
-          {/* Right Side: Content */}
-          <motion.div
-            className="revamp-content-side"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="revamp-text-wrapper">
-              <h1 className="revamp-title">Best Web Development Company</h1>
-              <p className="revamp-description">
-                Get a quote from our Web Development Team today to see how we can improve the functionality of your site!
-              </p>
-              <div className="revamp-btn-container">
-                <a href="/contact" className="revamp-quote-btn">Get a quote</a>
-              </div>
-            </div>
-          </motion.div>
-
+    <Link to="">  
+    <div class="service-item animated-card">
+    <div class="service-header">
+        <div class="service-icon">
+            <FontAwesomeIcon icon={faPalette} />
         </div>
-      </section>
+        
+        <a href="#" class="service-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="currentColor">
+                <path d="M23.6144 13.8266L11.4211 26.0199L9.41797 24.0167L21.6098 11.8234H10.8644V8.99011H26.4477V24.5734H23.6144V13.8266Z"></path>
+            </svg>
+        </a>
+    </div>
 
+    <div class="service-body">
+        <a href="#" class="service-content-link">
+            <h3 class="service-title">Web Designing</h3>
+            <p class="service-description">
+                Modern, user-focused designs that look stunning and deliver seamless user experiences.
+            </p>
+        </a>
+    </div>
+</div>
+</Link>
 
-
-      <section className="choice-section">
-        <div className="choice-wrapper">
-
-          {/* Left Content Side */}
-          <motion.div
-            className="choice-content-side"
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-          >
-            <div className="choice-text-container">
-              <h1 className="choice-title">Best Graphics Design Company</h1>
-              <p className="choice-description">
-                ABOQ India is the Right Choice for all types of Websites. If you are planning
-                to start up your Company, or just a recently start up Company, or running your
-                own store or shop for selling products, then ABOQ India is the perfect choice
-                to turn your dreams into reality.
-              </p>
-
-              <div className="choice-btn-group">
-                <a href="/about" className="btn-solid">Read More</a>
-                <a href="/contact" className="btn-outline">Get a Quote</a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Image Side */}
-          <motion.div
-            className="choice-image-side"
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="choice-img-box">
-              <img src={Graphics} alt="Best Website Design" className="img-fluid" />
-            </div>
-          </motion.div>
-
+   <Link to="">   <div class="service-item animated-card">
+    <div class="service-header">
+        <div class="service-icon">
+            <FontAwesomeIcon icon={faPenNib} />
         </div>
-      </section>
+        
+        <a href="#" class="service-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="currentColor">
+                <path d="M23.6144 13.8266L11.4211 26.0199L9.41797 24.0167L21.6098 11.8234H10.8644V8.99011H26.4477V24.5734H23.6144V13.8266Z"></path>
+            </svg>
+        </a>
+    </div>
 
-      <section className="revamp-section">
-        <div className="revamp-wrapper">
+    <div class="service-body">
+        <a href="#" class="service-content-link">
+            <h3 class="service-title">Graphics Designing</h3>
+            <p class="service-description">
+                Creative visuals that capture attention, strengthen brand identity, and communicate clearly.
+            </p>
+        </a>
+    </div>
+</div>
+</Link>
 
-          {/* Left Side: Image */}
-          <motion.div
-            className="revamp-image-side"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <div className="revamp-img-container">
-              <img src={SEO} alt="Revamp your site" className="img-responsive" />
-            </div>
-          </motion.div>
-
-          {/* Right Side: Content */}
-          <motion.div
-            className="revamp-content-side"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="revamp-text-wrapper">
-              <h1 className="revamp-title">Best Social Media Marketing Company</h1>
-              <p className="revamp-description">
-                Get a quote from our Web Development Team today to see how we can improve the functionality of your site!
-              </p>
-              <div className="revamp-btn-container">
-                <a href="/contact" className="revamp-quote-btn">Get a quote</a>
-              </div>
-            </div>
-          </motion.div>
-
+   <Link to="">  
+    <div class="service-item animated-card">
+    <div class="service-header">
+        <div class="service-icon">
+            <FontAwesomeIcon icon={faMagnifyingGlassChart} />
         </div>
-      </section>
+        
+        <a href="#" class="service-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="currentColor">
+                <path d="M23.6144 13.8266L11.4211 26.0199L9.41797 24.0167L21.6098 11.8234H10.8644V8.99011H26.4477V24.5734H23.6144V13.8266Z"></path>
+            </svg>
+        </a>
+    </div>
 
+    <div class="service-body">
+        <a href="#" class="service-content-link">
+            <h3 class="service-title">Search Engine Optimization</h3>
+            <p class="service-description">
+                Data-driven SEO strategies that improve visibility, drive organic traffic, and boost search rankings.
+            </p>
+        </a>
+    </div>
+</div>
+</Link>
 
-
-      <section className="choice-section">
-        <div className="choice-wrapper">
-
-          {/* Left Content Side */}
-          <motion.div
-            className="choice-content-side"
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-          >
-            <div className="choice-text-container">
-              <h1 className="choice-title">Best Search Engine Optimization Company</h1>
-              <p className="choice-description">
-                ABOQ India is the Right Choice for all types of Websites. If you are planning
-                to start up your Company, or just a recently start up Company, or running your
-                own store or shop for selling products, then ABOQ India is the perfect choice
-                to turn your dreams into reality.
-              </p>
-
-              <div className="choice-btn-group">
-                <a href="/about" className="btn-solid">Read More</a>
-                <a href="/contact" className="btn-outline">Get a Quote</a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Image Side */}
-          <motion.div
-            className="choice-image-side"
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="choice-img-box">
-              <img src={SMM} alt="Best Website Design" className="img-fluid" />
-            </div>
-          </motion.div>
-
+   <Link to="">  
+    <div class="service-item animated-card">
+    <div class="service-header">
+        <div class="service-icon">
+            <FontAwesomeIcon icon={faBullhorn} />
         </div>
-      </section>
+        
+        <a href="#" class="service-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="currentColor">
+                <path d="M23.6144 13.8266L11.4211 26.0199L9.41797 24.0167L21.6098 11.8234H10.8644V8.99011H26.4477V24.5734H23.6144V13.8266Z"></path>
+            </svg>
+        </a>
+    </div>
 
-      <section className="revamp-section">
-        <div className="revamp-wrapper">
+    <div class="service-body">
+        <a href="#" class="service-content-link">
+            <h3 class="service-title">Google Ads</h3>
+            <p class="service-description">
+               High-converting ad campaigns designed to attract, target the right audience, and maximize ROI.
+            </p>
+        </a>
+    </div>
+</div>
+</Link>
 
-          {/* Left Side: Image */}
-          <motion.div
-            className="revamp-image-side"
-            initial={{ opacity: 0, x: -100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <div className="revamp-img-container">
-              <img src={GoogleADS} alt="Revamp your site" className="img-responsive" />
-            </div>
-          </motion.div>
-
-          {/* Right Side: Content */}
-          <motion.div
-            className="revamp-content-side"
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="revamp-text-wrapper">
-              <h1 className="revamp-title">Best Google Ads Company</h1>
-              <p className="revamp-description">
-                Get a quote from our Web Development Team today to see how we can improve the functionality of your site!
-              </p>
-              <div className="revamp-btn-container">
-                <a href="/contact" className="revamp-quote-btn">Get a quote</a>
-              </div>
-            </div>
-          </motion.div>
-
+  <Link to="">  <div class="service-item animated-card">
+    <div class="service-header">
+        <div class="service-icon">
+            <FontAwesomeIcon icon={faShareNodes
+} />
         </div>
-      </section>
+        
+        <a href="#" class="service-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="currentColor">
+                <path d="M23.6144 13.8266L11.4211 26.0199L9.41797 24.0167L21.6098 11.8234H10.8644V8.99011H26.4477V24.5734H23.6144V13.8266Z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <div class="service-body">
+        <a href="#" class="service-content-link">
+            <h3 class="service-title">Social Media Marketing</h3>
+            <p class="service-description">
+                Engaging social strategies that grow your audience, increase reach, and build brand trust.
+            </p>
+        </a>
+    </div>
+</div>
+</Link>
 
 
-
-      <section className="choice-section">
-        <div className="choice-wrapper">
-
-          {/* Left Content Side */}
-          <motion.div
-            className="choice-content-side"
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-          >
-            <div className="choice-text-container">
-              <h1 className="choice-title">Best Digital Marketing Company</h1>
-              <p className="choice-description">
-                ABOQ India is the Right Choice for all types of Websites. If you are planning
-                to start up your Company, or just a recently start up Company, or running your
-                own store or shop for selling products, then ABOQ India is the perfect choice
-                to turn your dreams into reality.
-              </p>
-
-              <div className="choice-btn-group">
-                <a href="/about" className="btn-solid">Read More</a>
-                <a href="/contact" className="btn-outline">Get a Quote</a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Image Side */}
-          <motion.div
-            className="choice-image-side"
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="choice-img-box">
-              <img src={DigitalMar} alt="Best Website Design" className="img-fluid" />
-            </div>
-          </motion.div>
-
+          
         </div>
-      </section>
-
+      </div>
+</section>
 
 
        
-     <section className="work-industry-section">
+     {/* <section className="work-industry-section">
         <div className="container">
           <div className="section-header text-center">
             <h1>Helping Businesses in All Domains</h1>
@@ -761,12 +788,38 @@ function Home() {
               </div>
              ))}
            </div>
+
+           <div class="service-item animated-card">
+    <div class="service-header">
+        <div class="service-icon">
+            <i class="fas fa-globe"></i>
         </div>
-      </section>
+        
+        <a href="#" class="service-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="currentColor">
+                <path d="M23.6144 13.8266L11.4211 26.0199L9.41797 24.0167L21.6098 11.8234H10.8644V8.99011H26.4477V24.5734H23.6144V13.8266Z"></path>
+            </svg>
+        </a>
+    </div>
+
+    <div class="service-body">
+        <a href="#" class="service-content-link">
+            <h3 class="service-title">Web & App Development</h3>
+            <p class="service-description">
+                From concept to code—we create sleek, scalable web and app solutions that drive user engagement.
+            </p>
+        </a>
+    </div>
+</div>
+
+        </div>
+      </section> */}
 
 
 
-      <section className="process-section">
+
+
+      {/* <section className="process-section">
       <div className="process-container">
         
         <div className="process-header">
@@ -779,7 +832,7 @@ function Home() {
         <div className="process-stepper-wrapper">
           <div id="progress-bar-container">
             <ul>
-              {steps.map((step, index) => (
+              {stepss.map((step, index) => (
                 <li 
                   key={step.id} 
                   className={`step-item ${index <= activeStep ? 'active' : ''}`}
@@ -797,22 +850,77 @@ function Home() {
           <div className="process-content-display">
             <div className="process-grid">
               <div className="process-image-side">
-                <img src={steps[activeStep].img} alt={steps[activeStep].title} />
+                <img src={stepss[activeStep].img} alt={stepss[activeStep].title} />
               </div>
               <div className="process-text-side">
-                <h2>{steps[activeStep].title}</h2>
-                <p>{steps[activeStep].content}</p>
+                <h2>{stepss[activeStep].title}</h2>
+                <p>{stepss[activeStep].content}</p>
               </div>
             </div>
           </div>
 
         </div>
       </div>
-    </section>
+    </section> */}
 
 
+<section className="how-it-works-section" ref={sectionRef}>
+      <div className="hiw-container">
+        {/* Header Section */}
+        <div className="hiw-header reveal fadeInUp">
+          <span className="hiw-subtitle">HOW IT WORKS</span>
+          <h2 className="hiw-main-title">
+            Our proven <span>Process</span> for achieving success
+          </h2>
+          <p className="hiw-description">
+            Our proven process combines research, strategy, and creativity to deliver tailored solutions that drive measurable results.
+          </p>
+        </div>
+
+        {/* Steps Grid */}
+        <div className="hiw-grid">
+          {steps.map((step, index) => (
+          // <Link to="/contact"> 
+           <div 
+              key={step.id} 
+              className={`hiw-item reveal fadeInUp`} 
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              {/* Content Card */}
+
+              <div className="hiw-card">
+                <h3 className="hiw-card-title">{step.title}</h3>
+                <p className="hiw-card-text">{step.description}</p>
+                {/* <span className="hiw-card-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 43 43" fill="none">
+                    <path d="M28.5396 17.1469L13.3776 32.3089L10.8867 29.818L26.047 14.656H12.6853V11.1328H32.0628V30.5104H28.5396V17.1469Z" fill="currentColor"></path>
+                  </svg>
+                </span> */}
+              </div>
+
+              {/* Step Info & Icon */}
+              <div className="hiw-meta">
+                <div className="hiw-step-info">
+                  <span className="step-label">STEP</span>
+                  <span className="step-number">{step.id}</span>
+                </div>
+                <div className="hiw-icon-box">
+                  <img src={step.icon} alt={step.title} />
+                </div>
+              </div>
+
+            </div>
+            // </Link>
+
+
+          ))}
+        </div>
+      </div>
+</section>
 
 <Testimonial/>
+
+
 
 <Review/>
     </div>

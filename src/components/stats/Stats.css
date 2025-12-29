@@ -1,0 +1,163 @@
+
+
+.hiw-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styling */
+.hiw-header {
+  text-align: left;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.hiw-subtitle {
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--primary-black);
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.hiw-main-title {
+  font-size: clamp(24px, 5vw, 48px);
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.hiw-main-title span {
+  color: #E9641B;
+}
+
+.hiw-description {
+  font-size: 18px;
+  color: #222222;
+  line-height: 1.6;
+}
+
+
+.counter-section {
+  
+    padding: 80px 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Title Styling */
+.section-full-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-full-title h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.section-full-title p {
+    color: #666;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dash {
+    width: 50px;
+    height: 3px;
+    background-color: #000;
+    margin: 20px auto 0;
+}
+
+/* Grid Layout */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns for desktop */
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* Counter Box */
+.counter-box {
+    padding: 32px;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px #0000001a;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    
+    background: linear-gradient(45deg, #fc884a, #ecebe0, #ecebe0, #ecebe0, #ecebe0, #ecebe0, #ecebe0);
+    border: 1px solid #AAC4E7;
+    transition: transform 0.3s ease;
+}
+
+.counter-box:hover {
+    transform: translateY(-5px);
+}
+
+.counter-icon {
+    margin-bottom: 20px;
+}
+
+.counter-icon img {
+   
+    height: 60px;
+    width: auto;
+}
+
+.group-counter {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #E9641B;
+}
+
+.pre-fix {
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+.counter-title p {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #000000;
+    letter-spacing: 1px;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+    
+    .section-full-title h2 {
+        font-size: 1.8rem;
+    }
+}
