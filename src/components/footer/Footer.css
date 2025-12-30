@@ -1,6 +1,6 @@
 .footer-section {
   background: #151414;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/footer-img.jpg);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../assets/img/footer-img.png);
   background-repeat: no-repeat;
   background-size: cover;
   color: #ffffff;

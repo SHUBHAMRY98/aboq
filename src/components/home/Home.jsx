@@ -575,15 +575,6 @@ useEffect(() => {
           </p>
         </div>
 
-            {/* <div className="revamp-text-wrapper">
-              <h1 className="revamp-title">Reimagine, Redesign, Revamp</h1>
-              <p className="revamp-description">
-                We transform your website into a modern, high-performing digital experience. Elevating your digital presence with thoughtful design and powerful functionality !
-              </p>
-              <div className="revamp-btn-container">
-                <a href="/contact" className="revamp-quote-btn">Get a quote</a>
-              </div>
-            </div> */}
 
           </motion.div>
 
@@ -614,7 +605,7 @@ useEffect(() => {
         <div className="hiw-grid">
 
 
-  <Link to=""> 
+  <Link to="/web-development"> 
    <div class="service-item animated-card">
 
     <div class="service-header">
@@ -640,7 +631,7 @@ useEffect(() => {
 </div>
 </Link>
 
-    <Link to="">  
+    <Link to="/web-designing">  
     <div class="service-item animated-card">
     <div class="service-header">
         <div class="service-icon">
@@ -665,7 +656,7 @@ useEffect(() => {
 </div>
 </Link>
 
-   <Link to="">   <div class="service-item animated-card">
+   <Link to="/graphics-designing">   <div class="service-item animated-card">
     <div class="service-header">
         <div class="service-icon">
             <FontAwesomeIcon icon={faPenNib} />
@@ -689,7 +680,7 @@ useEffect(() => {
 </div>
 </Link>
 
-   <Link to="">  
+   <Link to="/search-engine-optimization">  
     <div class="service-item animated-card">
     <div class="service-header">
         <div class="service-icon">
@@ -714,7 +705,7 @@ useEffect(() => {
 </div>
 </Link>
 
-   <Link to="">  
+   <Link to="/google-ads">  
     <div class="service-item animated-card">
     <div class="service-header">
         <div class="service-icon">
@@ -739,7 +730,7 @@ useEffect(() => {
 </div>
 </Link>
 
-  <Link to="">  <div class="service-item animated-card">
+  <Link to="social-media-marketing">  <div class="service-item animated-card">
     <div class="service-header">
         <div class="service-icon">
             <FontAwesomeIcon icon={faShareNodes
@@ -763,7 +754,6 @@ useEffect(() => {
     </div>
 </div>
 </Link>
-
 
           
         </div>

@@ -38,6 +38,7 @@ const Review = () => {
       <div className="container">
         <div className="section-title">
           <h2>Google Verified Reviews</h2>
+           <div class="title-dash"></div>
         </div>
 
         <div className="carousel-wrapper">

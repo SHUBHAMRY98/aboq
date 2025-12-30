@@ -181,11 +181,10 @@ export default function Nav() {
   ];
 
   const serviceItems = [
-    { name: "Website Designing", path: "/web-design" },
+    { name: "Website Designing", path: "/web-designing" },
     { name: "Website Development", path: "/web-development" },
-    { name: "Graphics Design", path: "/graphics-design" },
+    { name: "Graphics Design", path: "/graphics-designing" },
     { name: "Google Ads", path: "/google-ads" },
-    { name: "Digital Marketnging", path: "/digital-marketing" },
     { name: "Social Media Marketing", path: "/social-media-marketing" },
     { name: "Search Engine Optimization", path: "/search-engine-optimization" },
   ];
