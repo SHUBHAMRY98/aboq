@@ -6,10 +6,18 @@ import '../home/Home.css'
 import '../services.css'
 
 
+<<<<<<< HEAD
 import DesktopBanner from '../../assets/img/development-desktop.png'
 import MobileBanner from '../../assets/img/development-mobile.png'
 
 import AboutImg from '../../assets/img/img2.png'; 
+=======
+import DesktopBanner from '../../assets/img/banner-designing-desktop.png'
+import MobileBanner from '../../assets/img/banner-designing-desktop.png'
+import DesktopBanner2 from '../../assets/img/b11.jpg'
+import MobileBanner2 from '../../assets/img/b2.jpg'
+import AboutImg from '../../assets/img/1.webp'; 
+>>>>>>> b9c864e277a33621aeafa70d586aa93edcc7c7e8
 import Review from '../review/Review';
 
 
@@ -61,7 +69,11 @@ const [activeTab, setActiveTab] = useState(1);
        <section className="banner-section">
   <picture>
     {/* Jab screen 768px se kam ho tab ye image load hogi */}
+<<<<<<< HEAD
 <source media="(max-width: 768px)" srcSet={MobileBanner} />
+=======
+<source media="(max-width: 768px)" srcSet={MobileBanner2} />
+>>>>>>> b9c864e277a33621aeafa70d586aa93edcc7c7e8
     
     {/* Default image (Desktop) */}
     <img src={DesktopBanner} alt="Banner" className="responsive-banner" />

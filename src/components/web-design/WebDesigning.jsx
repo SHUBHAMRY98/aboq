@@ -7,7 +7,11 @@ import '../services.css'
 import DesktopBanner from '../../assets/img/website-designing.png'
 import MobileBanner from '../../assets/img/mobile-designing.png'
 
+<<<<<<< HEAD
 import AboutImg from '../../assets/img/img1.png'; 
+=======
+import AboutImg from '../../assets/img/1.webp'; 
+>>>>>>> b9c864e277a33621aeafa70d586aa93edcc7c7e8
 import Review from '../review/Review';
 
 
@@ -142,6 +146,7 @@ const [activeTab, setActiveTab] = useState(1);
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="service-details">
+<<<<<<< HEAD
   <p>
     ABOQ India is a trusted <strong>Website Designing Company in Delhi-NCR</strong>,
     delivering visually appealing and user-centric designs that enhance brand
@@ -157,6 +162,17 @@ const [activeTab, setActiveTab] = useState(1);
   </p>
 </div>
 
+=======
+                <p>
+                  ABOQ India is the <strong>Best website designing Company in Delhi-NCR</strong>.
+                  We make sure that the services we offer meet our clients' expectations and help them grow their businesses. We have expertise meeting the demands of a wide variety of customers.
+                </p>
+                <p>
+                  If you are looking for a <strong>“website designer near me”</strong>,
+                  ABOQ India is definitely the right destination for you. We consider every detail of your job and create the most user-friendly website design for your company.
+                </p>
+              </div>
+>>>>>>> b9c864e277a33621aeafa70d586aa93edcc7c7e8
 
             </motion.div>
 

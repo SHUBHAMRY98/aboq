@@ -4,10 +4,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../home/Home.css'
 import '../services.css'
 
+<<<<<<< HEAD
 import DesktopBanner from '../../assets/img/ads-desktop.png'
 import MobileBanner from '../../assets/img/ads-mobile.png'
 
 import AboutImg from '../../assets/img/img4.png'; 
+=======
+import DesktopBanner from '../../assets/img/website-designing.png'
+import MobileBanner from '../../assets/img/mobile-designing.png'
+
+import AboutImg from '../../assets/img/1.webp'; 
+>>>>>>> b9c864e277a33621aeafa70d586aa93edcc7c7e8
 import Review from '../review/Review';
 
 
@@ -18,6 +25,7 @@ function GoogleAds(){
     const googleADS = [
   {
     id: 1,
+<<<<<<< HEAD
     title: "Campaign Strategy",
     heading: "Building a Performance-Focused Foundation",
     content: "We analyze your business goals, target audience, and existing campaigns to create a data-driven advertising strategy."
@@ -45,6 +53,35 @@ function GoogleAds(){
     title: "Tracking Scaling",
     heading: "Transparent Insights with Measurable Growth",
     content: "We implement conversion tracking, provide detailed performance reports, and scale successful campaigns for sustained results."
+=======
+    title: "Planning",
+    heading: "Aligning Digital Vision with Business Goals",
+    content: "We conduct in-depth analysis of your objectives, audience, and market landscape to define a clear, results-driven digital strategy."
+  },
+  {
+    id: 2,
+    title: "UI/UX Excellence",
+    heading: "Elegant Design with Purpose",
+    content: "Our design approach blends aesthetics with usability, delivering intuitive, brand-aligned experiences that engage and convert users."
+  },
+  {
+    id: 3,
+    title: "Mobile Optimization",
+    heading: "Mobile-First Optimization",
+    content: "With over 60% of traffic coming from mobile devices, we ensure your website delivers a perfect experience on every screen size, from smartphones to desktop computers."
+  },
+  {
+    id: 4,
+    title: "Performance",
+    heading: "Lightning-Fast Performance",
+    content: "We enhance site architecture, content, and technical performance to improve search rankings and deliver seamless user experiences."
+  },
+  {
+    id: 5,
+    title: "Maintenance",
+    heading: "Ongoing Support & Maintenance",
+    content: "We manage smooth deployment, rigorous testing, and continuous support to ensure your digital presence remains secure and up-to-date."
+>>>>>>> b9c864e277a33621aeafa70d586aa93edcc7c7e8
   }
 ];
 
@@ -142,6 +179,7 @@ const [activeTab, setActiveTab] = useState(1);
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="service-details">
+<<<<<<< HEAD
   <p>
     ABOQ India is a leading <strong>Google Ads Company in Delhi-NCR</strong>,
     delivering performance driven for advertising solutions that help businesses
@@ -157,6 +195,17 @@ const [activeTab, setActiveTab] = useState(1);
   </p>
 </div>
 
+=======
+                <p>
+                  ABOQ India is the <strong>Best Google Ads Company in Delhi-NCR</strong>.
+                  We make sure that the services we offer meet our clients' expectations and help them grow their businesses. We have expertise meeting the demands of a wide variety of customers.
+                </p>
+                <p>
+                  If you are looking for a <strong>“website google adsservice provider near me”</strong>,
+                  ABOQ India is definitely the right destination for you. We consider every detail of your job and create the most user-friendly website design for your company.
+                </p>
+              </div>
+>>>>>>> b9c864e277a33621aeafa70d586aa93edcc7c7e8
 
             </motion.div>
 
