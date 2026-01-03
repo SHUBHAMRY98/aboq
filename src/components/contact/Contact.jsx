@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import './Contact.css';
 
+
+import DesktopBanner from '../../assets/img/contact-desktop.png'
+import MobileBanner from '../../assets/img/contact-mobile.png'
+
+
 const Contact = () => {
   const [status, setStatus] = useState('');
 
@@ -14,6 +19,22 @@ const Contact = () => {
   return (
 
     <>
+
+      <section className="banner-section">
+                <picture>
+                 
+              <source media="(max-width: 768px)" srcSet={MobileBanner} />
+                  
+                  
+                  <img src={DesktopBanner} alt="Banner" className="responsive-banner" />
+                </picture>
+                
+                
+              </section>
+
+
+
+
     <section className="contact-contact-container">
       <div className="contact-content-wrapper">
         

@@ -2,7 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import  './About.css'
 import  '../home/Home.css'
 import Stats from '../stats/Stats';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
+import DesktopBanner from '../../assets/img/about-desktop.png'
+import MobileBanner from '../../assets/img/about-mobile.png'
 
 import AboutImg from '../../assets/img/1.webp';// adjust path if needed
 
@@ -65,6 +69,22 @@ function About() {
   return (
     
     <>
+
+            <section className="banner-section">
+           <picture>
+            
+         <source media="(max-width: 768px)" srcSet={MobileBanner} />
+             
+             
+             <img src={DesktopBanner} alt="Banner" className="responsive-banner" />
+           </picture>
+           
+           
+         </section>
+
+
+
+
 
             <section className="how-it-works-section" ref={sectionRef}>
         <div className="hiw-container">
@@ -197,8 +217,8 @@ function About() {
               </p>
 
               <div className="choice-btn-group">
-                <a href="/about" className="btn-solid">Read More</a>
-                <a href="/contact" className="btn-outline">Contact Us</a>
+                <Link to="/web-designing" className="btn-solid">Read More</Link>
+                <Link to="/contact" className="btn-outline">Contact Us</Link>
               </div>
             </div>
           </motion.div>
@@ -250,8 +270,8 @@ function About() {
                 Get a quote from our Web Development Team today to see how we can improve the functionality of your site!
               </p>
               <div className="revamp-btn-container">
-                <a href="/about" className="revamp-quote-btn">Read More</a>
-                <a href="/contact" className="revamp-quote-btn">Contact Us</a>
+                <Link to="/web-development" className="revamp-quote-btn">Read More</Link>
+                <Link to="/contact" className="revamp-quote-btn">Contact Us</Link>
               </div>
             </div>
           </motion.div>
@@ -282,8 +302,8 @@ function About() {
               </p>
 
               <div className="choice-btn-group">
-                <a href="/about" className="btn-solid">Read More</a>
-                <a href="/contact" className="btn-outline">Contact Us</a>
+                <Link to="/graphics-designing" className="btn-solid">Read More</Link>
+                <Link to="/contact" className="btn-outline">Contact Us</Link>
               </div>
             </div>
           </motion.div>
@@ -334,8 +354,8 @@ function About() {
                 Get a quote from our Web Development Team today to see how we can improve the functionality of your site!
               </p>
                <div className="revamp-btn-container">
-                <a href="/about" className="revamp-quote-btn">Read More</a>
-                <a href="/contact" className="revamp-quote-btn">Contact Us</a>
+                <Link to="/social-media-marketing" className="revamp-quote-btn">Read More</Link>
+                <Link to="/contact" className="revamp-quote-btn">Contact Us</Link>
               </div>
             </div>
           </motion.div>
@@ -366,8 +386,8 @@ function About() {
               </p>
 
               <div className="choice-btn-group">
-                <a href="/about" className="btn-solid">Read More</a>
-                <a href="/contact" className="btn-outline">Contact Us</a>
+                <Link to="/search-engine-optimization" className="btn-solid">Read More</Link>
+                <Link to="/contact" className="btn-outline">Contact Us</Link>
               </div>
             </div>
           </motion.div>
@@ -418,8 +438,8 @@ function About() {
                 Get a quote from our Web Development Team today to see how we can improve the functionality of your site!
               </p>
               <div className="revamp-btn-container">
-                <a href="/about" className="revamp-quote-btn">Read More</a>
-                <a href="/contact" className="revamp-quote-btn">Contact Us</a>
+                <Link to="/google-ads" className="revamp-quote-btn">Read More</Link>
+                <Link to="/contact" className="revamp-quote-btn">Contact Us</Link>
               </div>
             </div>
           </motion.div>
@@ -429,48 +449,6 @@ function About() {
 
 
 
-      <section className="choice-section">
-        <div className="choice-wrapper">
-
-          {/* Left Content Side */}
-          <motion.div
-            className="choice-content-side"
-            initial={{ opacity: 0, x: -80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-          >
-            <div className="choice-text-container">
-              <h1 className="choice-title">Best Digital Marketing Company</h1>
-              <p className="choice-description">
-                ABOQ India is the Right Choice for all types of Websites. If you are planning
-                to start up your Company, or just a recently start up Company, or running your
-                own store or shop for selling products, then ABOQ India is the perfect choice
-                to turn your dreams into reality.
-              </p>
-
-              <div className="choice-btn-group">
-                <a href="/about" className="btn-solid">Read More</a>
-                <a href="/contact" className="btn-outline">Contact Us</a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Image Side */}
-          <motion.div
-            className="choice-image-side"
-            initial={{ opacity: 0, x: 80 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
-          >
-            <div className="choice-img-box">
-              <img src={DigitalMar} alt="Best Website Design" className="img-fluid" />
-            </div>
-          </motion.div>
-
-        </div>
-      </section>
 
 
 

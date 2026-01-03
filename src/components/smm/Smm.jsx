@@ -4,8 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../home/Home.css'
 import '../services.css'
 
-import DesktopBanner from '../../assets/img/website-designing.png'
-import MobileBanner from '../../assets/img/mobile-designing.png'
+import DesktopBanner from '../../assets/img/smm-desktop.png'
+import MobileBanner from '../../assets/img/smm-mobile.png'
 
 import AboutImg from '../../assets/img/img5.png'; 
 import Review from '../review/Review';
