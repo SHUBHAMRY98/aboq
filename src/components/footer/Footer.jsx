@@ -119,7 +119,7 @@ function Footer() {
                 <FontAwesomeIcon icon={faPhone} className="contact-icon" />
                 <div className="contact-text">
                   <h4>Call us</h4>
-                  <span>(+91) 0987654321</span>
+                  <span>(+91) 9319289888</span>
                 </div>
               </div>
               <div className="contact-item">

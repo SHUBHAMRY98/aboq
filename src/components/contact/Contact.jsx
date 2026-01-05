@@ -66,7 +66,7 @@ const Contact = () => {
             <ContactItem 
               icon="📞" 
               label="Phone" 
-              value="9711708399" 
+              value="9319289888" 
               note="Mon-Fri, 10:30AM-7:30PM" 
             />
             <ContactItem 
