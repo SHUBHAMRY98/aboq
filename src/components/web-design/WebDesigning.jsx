@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../home/Home.css'
 import '../services.css'
 
-import DesktopBanner from '../../assets/img/website-designing.png'
+import DesktopBanner from '../../assets/img/design-desktop.png'
 import MobileBanner from '../../assets/img/mobile-designing.png'
 
 import AboutImg from '../../assets/img/img1.png'; 
