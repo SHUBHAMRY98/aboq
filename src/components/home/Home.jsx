@@ -43,6 +43,31 @@ import Development from '../../assets/img/development-removebg-preview.png'
 import Testing from '../../assets/img/testing-removebg-preview.png'
 import Maintenance from '../../assets/img/maintenance-removebg-preview.png'
 
+import Uiux from '../../assets/img/web-design.png'
+import Wordpress from '../../assets/img/wordpress.png'
+import Shopify from '../../assets/img/shopify.png'
+import Phpcode from '../../assets/img/php-code.png'
+import Experience from '../../assets/img/experience.png'
+import Price from '../../assets/img/inflation.png'
+
+import I1 from "../../assets/img/icon-1.webp"
+import I2 from "../../assets/img/icon-2.webp"
+import I3 from "../../assets/img/icon-3.webp"
+import I4 from "../../assets/img/icon-4.webp"
+import I5 from "../../assets/img/icon-5.webp"
+import I6 from "../../assets/img/icon-6.webp"
+import I7 from "../../assets/img/icon-7.webp"
+import I8 from "../../assets/img/icon-8.webp"
+import I9 from "../../assets/img/icon-9.webp"
+import I10 from "../../assets/img/icon-10.webp"
+import I11 from "../../assets/img/icon-11.webp"
+import I12 from "../../assets/img/icon-12.webp"
+import I13 from "../../assets/img/icon-13.webp"
+import I14 from "../../assets/img/icon-14.webp"
+import I15 from "../../assets/img/icon-15.webp"
+import I16 from "../../assets/img/icon-16.webp"
+import I17 from "../../assets/img/icon-17.webp"
+import I18 from "../../assets/img/icon-18.webp"
 
 
 
@@ -120,30 +145,6 @@ useEffect(() => {
   };
 }, []); // Empty dependency array ensures this runs once
 
-  // useEffect(() => {
-  //   // Purane instance ko destroy karein agar koi hai
-  //   if (typedInstance.current) {
-  //     typedInstance.current.destroy();
-  //   }
-
-  //   if (typedElement.current) {
-  //     typedInstance.current = new Typed(typedElement.current, {
-  //       strings: ["Website Development","Graphics Designing", "Website Designing", "Search Engine Optimization","Google Ads","Social Media Marketing"],
-  //       typeSpeed: 100,
-  //       backSpeed: 80,
-  //       loop: true,
-  //       backDelay: 1500,
-  //       showCursor: true,
-  //       cursorChar: '|'
-  //     });
-  //   }
-
-  //   return () => {
-  //     if (typedInstance.current) {
-  //       typedInstance.current.destroy();
-  //     }
-  //   };
-  // }, []);
 
 
   useEffect(() => {
@@ -267,27 +268,6 @@ useEffect(() => {
 
 
 
-  //Feature Data End
-
-  // Work
-
- 
-    // const industries = [
-    //   { title: "Social Networking", icon:Icon1},
-    //   { title: "Digital Marketing", icon:Icon1},
-    //   { title: "Ecommerce Development", icon:Icon1},
-    //   { title: "Video Service", icon:Icon1},
-    //   { title: "Banking Service", icon:Icon1},
-    //   { title: "Enterprise Service", icon:Icon1},
-    //   { title: "Education Service", icon:Icon1},
-    //   { title: "Tour and Travels", icon:Icon1},
-    //   { title: "Health Service", icon:Icon1},
-    //   { title: "Event & Ticket", icon:Icon1},
-    //   { title: "Restaurant Service", icon:Icon1},
-    //   { title: "Business Consultant", icon:Icon1},
-    // ];
-
-
 
 
     //Process 
@@ -353,6 +333,79 @@ useEffect(() => {
 
     return () => observer.disconnect();
   }, []);
+
+
+
+
+
+
+
+  //Why Choose Us
+
+  const whychoose = [
+    {
+      title: "UI/UX Specialists",
+      desc: "Our UI/UX specialists are responsible for delivering an excellent user experience by providing outstanding and user-friendly web design.",
+      icon: Uiux, // You can replace these with your <img> tags
+      className: "ui-section"
+    },
+    {
+      title: "WordPress Developers",
+      desc: "Our WordPress developers follow the latest development trends for building interactive, and smart websites as per the specific needs of clients.",
+      icon: Wordpress,
+      className: "wordpress-section"
+    },
+    {
+      title: "Shopify Experts",
+      desc: "Our Shopify experts help you to develop your Shopify store exactly the way you want. Also, we’re here to help you rank easily on Google.",
+      icon: Shopify,
+      className: "experts-section"
+    },
+    {
+      title: "PHP Developers",
+      desc: "We have a dedicated team of developers that offers custom web development services by creating powerful, scalable and dynamic websites.",
+      icon: Phpcode,
+      className: "php-section"
+    },
+    {
+      title: "Experience in the Industry",
+      desc: "Hundreds of web development projects that we completed serve as testimonials of our excellent services.",
+      icon: Experience,
+      className: "experience"
+    },
+    {
+      title: "Competitive Price",
+      desc: "The budget is an important factor when you hire a digital marketing company in Delhi. The price varies depending on a wide range of factors.",
+      icon: Price,
+      className: "price-section"
+    }
+  ];
+
+
+
+
+  //we work with
+
+  const industries = [
+    { name: "Social Networking", icon: I1 },
+    { name: "Digital Marketing", icon:  I2},
+    { name: "Ecommerce Development", icon:  I3 },
+    { name: "Video Service", icon:  I4 },
+    { name: "Banking Service", icon:  I5 },
+    { name: "Enterprise Service", icon:  I6 },
+    { name: "Education Service", icon:  I7 },
+    { name: "Tour and Travels", icon:  I8 },
+    { name: "Health Service", icon:  I9 },
+    { name: "Event & Ticket", icon: I10 },
+    { name: "Restaurant Service", icon:  I11 },
+    { name: "Business Consultant", icon:  I12 },
+    { name: "NGO", icon:  I13 },
+    { name: "Real Estate", icon:  I14 },
+    { name: "Fashion Clothing", icon:  I15 },
+    { name: "Financial Services", icon:  I16 },
+    { name: "Books", icon:  I17 },
+    { name: "Corporates & Entrepreneurs", icon:  I18 },
+  ];
 
 
   return (
@@ -478,7 +531,7 @@ useEffect(() => {
 
             {/* Right Image */}
             <motion.div
-              className="about-image-wrapper"
+              className="about-image-wrapper-main"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: false, amount: 0.3 }}
@@ -740,7 +793,7 @@ useEffect(() => {
           // <Link to="/contact"> 
            <div 
               key={step.id} 
-              className={`hiw-item reveal fadeInUp`} 
+              className={`hiw-item  fadeInUp`} 
               style={{ transitionDelay: `${index * 150}ms` }}
             >
               {/* Content Card */}
@@ -771,6 +824,91 @@ useEffect(() => {
 
 
           ))}
+        </div>
+      </div>
+</section>
+
+
+<section className="how-it-works-section" ref={sectionRef}>
+      <div className="hiw-container">
+        {/* Header Section */}
+         <motion.div className="hiw-header fadeInUp"
+        initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration:2, ease: "easeOut" }}
+        >
+          <span className="hiw-subtitle">WHAT MAKES US DIFFERENT</span>
+          <h2 className="hiw-main-title">
+            A Trusted Partner for <span>Powerful Digital</span> Experiences
+          </h2>
+          <p className="hiw-description">
+            At ABOQ India, we create visually stunning and user-centric websites that convert. With expertise across UI/UX design, Shopify, and WordPress development, our experienced team has built 500+ custom websites tailored to business goals. We focus on performance, scalability, and seamless user experience so you can count on results.
+          </p>
+        </motion.div>
+
+        {/* Steps Grid */}
+        <div className="hiw-grid">
+        <div className="choose-us-container">
+      <div className="choose-us-grid">
+       {whychoose.map((item, index) => (
+          <div key={index} className={`choose-card ${item.className}`}>
+            <div className="icon-box-why">
+              {/* <span className="icon-placeholder">{item.icon}</span> */}
+              <img src={item.icon} alt={item.title} /> 
+            </div>
+            <div className="content-box">
+              <h2>{item.title}</h2>
+              <p>{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+        </div>
+      </div>
+</section>
+
+
+
+
+
+<section className="how-it-works-section" ref={sectionRef}>
+      <div className="hiw-container">
+        {/* Header Section */}
+         <motion.div className="hiw-header fadeInUp"
+        initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration:2, ease: "easeOut" }}
+        >
+          <span className="hiw-subtitle">EMPOWERING BUSINESS ACROSS INDUSTRIES</span>
+          <h2 className="hiw-main-title">
+            Driving <span>Digital Growth</span> for <span>Every Business</span> Domain
+          </h2>
+          <p className="hiw-description">
+            With experience serving diverse industries, ABOQ India helps businesses strengthen their online identity and scale efficiently. Our strategic approach and industry-specific solutions have contributed to significant growth for startups, SMEs, and enterprises alike.
+          </p>
+        </motion.div>
+
+        {/* Steps Grid */}
+        <div className="hiw-grid">
+       <div className="work-list-grid">
+          {industries.map((item, index) => (
+            <div key={index} className="industry-card">
+              <div className="industry-icon-wrapper">
+                <img 
+                  src={item.icon} 
+                  alt={item.name} 
+                  loading="lazy" 
+                />
+              </div>
+              <div className="industry-name">
+                <p>{item.name}</p>
+              </div>
+            </div>
+          ))}
+        </div>
         </div>
       </div>
 </section>
