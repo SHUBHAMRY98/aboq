@@ -60,7 +60,7 @@ const Contact = () => {
             <ContactItem 
               icon="📧" 
               label="Email" 
-              value="hello@contact.com" 
+              value="aboqindia@gmail.com" 
               note="We respond within 24 hours" 
             />
             <ContactItem 
@@ -72,7 +72,7 @@ const Contact = () => {
             <ContactItem 
               icon="📍" 
               label="Office" 
-              value="D&E-245 A, Golden I, Sector – Tech Zone IV, Greater Noida West, India" 
+              value="Gaur City Center, 4-Murti, Greater Noida, India" 
             />
           </div>
 
