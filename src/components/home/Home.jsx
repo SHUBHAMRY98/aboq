@@ -241,25 +241,25 @@ useEffect(() => {
   const featureData = [
     {
       title: "Approach",
-      description: "Starting with negotiations and until the completion of the process Starting with negotiations and until the ...",
+      description: "We follow a transparent and collaborative approach from initial discussion to final delivery. Every step is planned, communicated clearly, and executed with precision to ensure smooth project completion.",
       icon: Icon1,
       delay: 0.1,
     },
     {
       title: "Quality",
-      description: "We ensure that the Website is designed and developed We ensure that the Website is designed ...",
+      description: "Quality is at the core of everything we build. Our websites are designed and developed using best practices, ensuring performance, security, and long-term reliability across all devices.",
       icon: Icon2,
       delay: 0.3,
     },
     {
       title: "Creative",
-      description: "We guarantee an exclusive design We guarantee an exclusive design We guarantee an exclusive design ...",
+      description: "We deliver unique and visually engaging designs tailored to your brand. Our creative process ensures every project stands out while maintaining clarity, usability, and purpose.",
       icon: Icon3,
       delay: 0.6,
     },
     {
       title: "Support",
-      description: "We provide 1 year warranty support We provide 1 year warranty support We provide 1 year warranty support ...",
+      description: "We provide reliable post-launch support with a 1-year warranty. Our team is always ready to assist with updates, fixes, and guidance to keep your website running flawlessly.",
       icon: Icon4,
       delay: 1,
     }
@@ -291,54 +291,6 @@ useEffect(() => {
 
 
     //Process 
-
-
-  // const [activeStep, setActiveStep] = useState(0);
-
-  // const stepss = [
-  //   {
-  //     id: "step01",
-  //     title: "Discovery Workshop",
-  //     img: Workshop,
-  //     content: "We give the utmost importance to understand and document client’s inputs, design, and branding preferences. We work in a collaborative approach involving key stakeholders."
-  //   },
-  //   {
-  //     id: "step02",
-  //     title: "Planning",
-  //     img: Planning,
-  //     content: "Our services emphasize on well-defined project planning and leave nothing for assumption. We define technical specifications and devise branding guidelines."
-  //   },
-  //   {
-  //     id: "step03",
-  //     title: "Design",
-  //     img: Designing,
-  //     content: "We provide Web, Tablet, and Mobile-specific UI designs. We deliver clickable prototypes on Invision platform and source files in Photoshop or Sketch."
-  //   },
-  //   {
-  //     id: "step04",
-  //     title: "Development",
-  //     img: Development,
-  //     content: "We cater requirements for frontend, backend, and API integration using Agile Scrum methodology, focusing on scalability and clean code structure."
-  //   },
-  //   {
-  //     id: "step05",
-  //     title: "Testing",
-  //     img: Testing,
-  //     content: "We test each sprint manually, report bugs, and perform regression testing to ensure proper functioning of previously approved milestones."
-  //   },
-  //   {
-  //     id: "step06",
-  //     title: "Maintenance",
-  //     img: Maintenance,
-  //     content: "We ensure product enhancement through regular Security Audits, code backups, and constant system upgradation even after development ends."
-  //   }
-  // ];
-
-  // Progress Bar width logic
-  // const progressWidth = (activeStep / (stepss.length - 1)) * 100;
-
-
-
 
 
   const steps = [
