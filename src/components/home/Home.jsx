@@ -714,102 +714,17 @@ useEffect(() => {
 
 
        
-     {/* <section className="work-industry-section">
-        <div className="container">
-          <div className="section-header text-center">
-            <h1>Helping Businesses in All Domains</h1>
-            <p>Digital Top Guns has served an array of Industries in their Business establishment.</p>
-          </div>
-          <div className="industry-card-grid">
-              {industries.map((item, index) => (
-              <div key={index} className="industry-simple-card">
-                <div className="industry-icon-box">
-                  <img src={item.icon} alt={item.title} />
-                </div>
-                <h3>{item.title}</h3>
-              </div>
-             ))}
-           </div>
-
-           <div class="service-item animated-card">
-    <div class="service-header">
-        <div class="service-icon">
-            <i class="fas fa-globe"></i>
-        </div>
-        
-        <a href="#" class="service-btn">
-            <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35" fill="currentColor">
-                <path d="M23.6144 13.8266L11.4211 26.0199L9.41797 24.0167L21.6098 11.8234H10.8644V8.99011H26.4477V24.5734H23.6144V13.8266Z"></path>
-            </svg>
-        </a>
-    </div>
-
-    <div class="service-body">
-        <a href="#" class="service-content-link">
-            <h3 class="service-title">Web & App Development</h3>
-            <p class="service-description">
-                From concept to code—we create sleek, scalable web and app solutions that drive user engagement.
-            </p>
-        </a>
-    </div>
-</div>
-
-        </div>
-      </section> */}
-
-
-
-
-
-      {/* <section className="process-section">
-      <div className="process-container">
-        
-        <div className="process-header">
-          <h2 className="title-text">Our Process</h2>
-            <div className="orange-dash"></div>
-          <p>We ensure on-site support for on-time delivery with quality work.</p>
-          
-        </div>
-
-        <div className="process-stepper-wrapper">
-          <div id="progress-bar-container">
-            <ul>
-              {stepss.map((step, index) => (
-                <li 
-                  key={step.id} 
-                  className={`step-item ${index <= activeStep ? 'active' : ''}`}
-                  onClick={() => setActiveStep(index)}
-                >
-                  <div className="step-label">{step.title}</div>
-                </li>
-              ))}
-            </ul>
-            <div className="progress-line-base">
-              <div className="progress-line-fill" style={{ width: `${progressWidth}%` }}></div>
-            </div>
-          </div>
-
-          <div className="process-content-display">
-            <div className="process-grid">
-              <div className="process-image-side">
-                <img src={stepss[activeStep].img} alt={stepss[activeStep].title} />
-              </div>
-              <div className="process-text-side">
-                <h2>{stepss[activeStep].title}</h2>
-                <p>{stepss[activeStep].content}</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section> */}
 
 
 <section className="how-it-works-section" ref={sectionRef}>
       <div className="hiw-container">
         {/* Header Section */}
-        <div className="hiw-header reveal fadeInUp">
+         <motion.div className="hiw-header fadeInUp"
+        initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: false, amount: 0.3 }}
+            transition={{ duration:2, ease: "easeOut" }}
+        >
           <span className="hiw-subtitle">HOW IT WORKS</span>
           <h2 className="hiw-main-title">
             Our proven <span>Process</span> for achieving success
@@ -817,7 +732,7 @@ useEffect(() => {
           <p className="hiw-description">
             Our proven process combines research, strategy, and creativity to deliver tailored solutions that drive measurable results.
           </p>
-        </div>
+        </motion.div>
 
         {/* Steps Grid */}
         <div className="hiw-grid">

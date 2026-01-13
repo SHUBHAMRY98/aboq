@@ -5,10 +5,14 @@ import Stats from '../stats/Stats';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
+<<<<<<< HEAD
 import DesktopBanner from '../../assets/img/about-desktop.png'
 import MobileBanner from '../../assets/img/about-mobile.png'
 
 import AboutImg from '../../assets/img/1.webp';// adjust path if needed
+=======
+import AboutImg from '../../assets/img/aboq-about.jpg';// adjust path if needed
+>>>>>>> 14b80b0 (13/01/2026)
 
 
 import DigitalMar from '../../assets/img/digital-marketing.png';
