@@ -196,7 +196,7 @@ export default function Nav() {
         <div className="topbar-container">
           <div className="topbar-left">
             <a href="tel:9319289888"><Phone size={14} /> 9319289888</a>
-            <a href="mailto:abc@gmail.com"><Mail size={14} /> abc@gmail.com</a>
+            <a href="mailto:abc@gmail.com"><Mail size={14} />aboqindia@gmail.com</a>
           </div>
           <div className="topbar-right">
             <a href="#" className="fb"><FontAwesomeIcon icon={faFacebookF} /></a>
