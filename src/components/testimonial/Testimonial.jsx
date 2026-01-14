@@ -16,7 +16,7 @@ const Testimonial= () => {
       name: "Priya Khosla",
       role: "Client",
       img: Test1,
-      text: "I have a lovely experience with Digital Top Guns as far as my social media and website maintenance is concerned. Satisfied with the services and quick response!"
+      text: "I have a lovely experience with ABOQ India as far as my social media and website maintenance is concerned. Satisfied with the services and quick response!"
     },
     {
       name: "Mansie Dewan",

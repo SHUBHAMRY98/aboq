@@ -19,7 +19,7 @@ const reviews = [
     id: 3,
     name: "Vipsy Inc",
     img: "https://i.pravatar.cc/150?u=3",
-    text: "Digital top guns really did amazing job. My Website design is so cool, very pretty, classic and user-friendly. I really would like to appreciate Deepti and her team."
+    text: "ABOQ India really did amazing job. My Website design is so cool, very pretty, classic and user-friendly. I really would like to appreciate Deepti and her team."
   },
   {
     id: 4,
