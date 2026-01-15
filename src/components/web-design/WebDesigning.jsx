@@ -5,7 +5,7 @@ import '../home/Home.css'
 import '../services.css'
 
 import DesktopBanner from '../../assets/img/design-desktop.png'
-import MobileBanner from '../../assets/img/mobile-designing.png'
+import MobileBanner from '../../assets/img/design-mobile.png'
 
 import AboutImg from '../../assets/img/img1.png'; 
 import Review from '../review/Review';
